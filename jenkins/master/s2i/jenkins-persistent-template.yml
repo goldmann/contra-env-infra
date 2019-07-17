@@ -159,10 +159,6 @@ objects:
                 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=500m
           - name: GIT_SSL_NO_VERIFY
             value: 'true'
-          - name: OVERRIDE_PV_CONFIG_WITH_IMAGE_CONFIG
-            value: 'true'
-          - name: OVERRIDE_PV_PLUGINS_WITH_IMAGE_PLUGINS
-            value: 'true'
           - name: LOAD_SEED_JOB
             value: ${LOAD_SEED_JOB}
           - name: DSL_JOB_REPO
@@ -251,11 +247,11 @@ objects:
 parameters:
 - description: Git source URI for Jenkins S2I. E.g. https://github.com/CentOS-PaaS-SIG/contra-env-infra
   name: REPO_URL
-  value: https://github.com/CentOS-PaaS-SIG/contra-env-infra
+  value: https://github.com/goldmann/contra-env-infra
   required: true
 - description: Git branch/tag reference
   name: REPO_REF
-  value: master
+  value: persistent
 - description: Path within Git project to build; empty for root project directory.
   name: CONTEXT_DIR
   value: jenkins/master/openshift
